@@ -1,0 +1,33 @@
+@startuml
+
+' Definição das interfaces para as funcionalidades do iPhone
+interface ReprodutorMusical {
+  + play()
+  + pause()
+  + stop()
+}
+
+interface AparelhoTelefonico {
+  + ligar(numero: String)
+  + atender()
+  + desligar()
+}
+
+interface NavegadorInternet {
+  + acessarURL(url: String)
+  + buscar(termo: String)
+}
+
+' Classe que representa o iPhone e implementa as funcionalidades
+class iPhone {
+  - modelo: String
+  - versaoSO: String
+  + iPhone(modelo: String, versaoSO: String)
+}
+
+' Relações de implementação entre a classe iPhone e as interfaces
+iPhone ..|> ReprodutorMusical
+iPhone ..|> AparelhoTelefonico
+iPhone ..|> NavegadorInternet
+
+@enduml
